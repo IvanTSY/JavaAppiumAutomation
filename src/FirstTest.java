@@ -26,7 +26,10 @@ public class FirstTest {
         capabilities.setCapability("automationName","Appium");
         capabilities.setCapability("appPackage","org.wikipedia");
         capabilities.setCapability("appActivity",".main.MainActivity");
-        capabilities.setCapability("app","C:\\Users\\FBI\\IdeaProjects\\ApiumTraining\\JavaAppiumAutomation\\apks\\org.wikipedia.apk");
+
+        //capabilities.setCapability("app","C:\\Users\\FBI\\IdeaProjects\\ApiumTraining\\JavaAppiumAutomation\\apks\\org.wikipedia.apk"); //Дом
+        capabilities.setCapability("app","D:\\GitHub\\JavaAppiumAutomation\\apks\\org.wikipedia.apk");  //Работа
+
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
     }
@@ -38,105 +41,92 @@ public class FirstTest {
     }
 
 
-//    @Test
-//
-//    public void firstTest(){
-//
-//        //Новые , компактные функции поиска , нажатия  и отправки текста
-//        //1й после
-//        waitForElementByXPATHAndClick(
-//                "//*[contains(@text,'Search Wikipedia')]",
-//                "Can not Find Search Wikipedia",
-//                5);
-//
-//        waitForElementByXPATHAndSendKeys(
-//                "//*[contains(@text,'Search…')]",
-//                "java",
-//                "Can not Find search input",
-//                5);
-//
-//
-//        //1й до
-//        //WebElement element_to_init_search = driver.findElementByXPath("//*[contains(@text,'Search Wikipedia')]");
-//        //element_to_init_search.click();
-//
-//        //2й до
-//        //WebElement element_to_search_enter = waitForElementByXpath(
-//        //        "//*[contains(@text,'Search…')]",
-//        //        "Can not Find search input"
-//        //);
-//        //element_to_search_enter.sendKeys("java");
-//
-//
-//        waitForElementPressentByXpath(
-//                "//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']",
-//                "Not find the text 'Object-oriented programming language' in 'java' topic"
-//
-//        );
-//    }
+    @Test
+
+    public void firstTest(){
+
+        //Новые , компактные функции поиска , нажатия  и отправки текста
+        //1й после
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Can not Find Search Wikipedia",
+                15);
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "java",
+                "Can not Find search input",
+                5);
+
+        waitForElementPresent(
+                By.xpath("//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Not find the text 'Object-oriented programming language' in 'java' topic"
+
+        );
+    }
 
     @Test
 
     public void testCancelSearch(){
-        waitForElementByIdAndClick(
-                "org.wikipedia:id/search_container",
+
+        //нашли элемент и кликнули
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_container"),
                 "Can Not Find Serch Bar",
                 5
         );
 
-        waitForElementByIdAndClick(
-                "org.wikipedia:id/search_close_btn",
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_close_btn"),
                 "Can Not Find close btn on the Serch Bar",
                 5
         );
+        //ждём пока элемент исчезнет
+        waitForElementNotPresent(
+                By.id("org.wikipedia:id/search_close_btn"),
+                "Can Find close btn on the Serch Bar",
+                5
+        );
+
+
     }
 
-    private WebElement waitForElementPresentByXpath(String xpath, String error_message, long timeoutInSecond){
+    private WebElement waitForElementPresent(By by, String error_message, long timeoutInSecond){
         WebDriverWait wait = new WebDriverWait(driver,timeoutInSecond);
         wait.withMessage(error_message + "\n");
-        By by = By.xpath(xpath);
         return wait.until(ExpectedConditions.presenceOfElementLocated(by));
 
     }
 
     //перегрузка метода (если таймаут не обязательно увеличивать , стандарт - 5сек)
-    private WebElement waitForElementPresentByXpath(String xpath, String error_message){
+    private WebElement waitForElementPresent(By by, String error_message){
 
-        return waitForElementPresentByXpath(xpath,error_message,5);
+        return waitForElementPresent(by,error_message,5);
 
     }
     //упрощаем написание тестов\ действие клик
-    private WebElement waitForElementByXPATHAndClick(String xpath, String error_message, long timeoutInSecond){
+    private WebElement waitForElementAndClick(By by, String error_message, long timeoutInSecond){
 
-        WebElement element = waitForElementPresentByXpath(xpath,error_message,timeoutInSecond);
+        WebElement element = waitForElementPresent(by,error_message,timeoutInSecond);
         element.click();
         return element;
     }
-    //отправляем текст
-    private WebElement waitForElementByXPATHAndSendKeys(String xpath, String value, String error_message, long timeoutInSecond){
+    //отправляем текст(вводим)
+    private WebElement waitForElementAndSendKeys(By by, String value, String error_message, long timeoutInSecond){
 
-        WebElement element = waitForElementPresentByXpath(xpath,error_message,timeoutInSecond);
+        WebElement element = waitForElementPresent(by,error_message,timeoutInSecond);
         element.sendKeys(value);
         return element;
     }
 
+    //Ожидание отсутствия элемента
 
-
-    //Методы для поиска по ID
-    private WebElement waitForElementPresentById(String id, String error_message, long timeoutInSecond){
-        WebDriverWait wait = new WebDriverWait(driver,timeoutInSecond);
+    private boolean waitForElementNotPresent (By by, String error_message, long timeoutInSecond){
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSecond);
         wait.withMessage(error_message + "\n");
-        By by = By.id(id);
-        return wait.until(ExpectedConditions.presenceOfElementLocated(by));
-
-    }
-
-    //упрощаем написание тестов\ действие клик
-    private WebElement waitForElementByIdAndClick(String id, String error_message, long timeoutInSecond){
-
-        WebElement element = waitForElementPresentById(id, error_message, timeoutInSecond);
-        element.click();
-        return element;
+        return wait.until(
+                ExpectedConditions.invisibilityOfElementLocated(by)
+        );
     }
 
 
