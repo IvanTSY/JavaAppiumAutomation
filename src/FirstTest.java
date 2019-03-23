@@ -1,6 +1,7 @@
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -27,8 +28,8 @@ public class FirstTest {
         capabilities.setCapability("appPackage","org.wikipedia");
         capabilities.setCapability("appActivity",".main.MainActivity");
 
-        //capabilities.setCapability("app","C:\\Users\\FBI\\IdeaProjects\\ApiumTraining\\JavaAppiumAutomation\\apks\\org.wikipedia.apk"); //Дом
-        capabilities.setCapability("app","D:\\GitHub\\JavaAppiumAutomation\\apks\\org.wikipedia.apk");  //Работа
+        capabilities.setCapability("app","C:\\Users\\FBI\\IdeaProjects\\ApiumTraining\\JavaAppiumAutomation\\apks\\org.wikipedia.apk"); //Дом
+        //capabilities.setCapability("app","D:\\GitHub\\JavaAppiumAutomation\\apks\\org.wikipedia.apk");  //Работа
 
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
@@ -40,6 +41,40 @@ public class FirstTest {
         driver.quit();
     }
 
+
+    @Test
+
+    public void testCompareArticleTitle(){
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Can not Find Search Wikipedia",
+                15);
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "java",
+                "Can not Find search input",
+                5);
+
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Can not Find Search Wikipedia",
+                5);
+
+        WebElement title_element = waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Can not Find Article title",
+                5);
+
+        String article_title = title_element.getAttribute("text");
+
+        Assert.assertEquals(
+                "Wrong text or not find text in state",
+                "Java (programming language)",
+                article_title
+        );
+    }
 
     @Test
 
@@ -73,6 +108,19 @@ public class FirstTest {
         waitForElementAndClick(
                 By.id("org.wikipedia:id/search_container"),
                 "Can Not Find Serch Bar",
+                5
+        );
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "java",
+                "Can not Find search input",
+                5
+        );
+
+        waitForElementAndClear(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Search bar is not empty",
                 5
         );
 
@@ -127,6 +175,12 @@ public class FirstTest {
         return wait.until(
                 ExpectedConditions.invisibilityOfElementLocated(by)
         );
+    }
+
+    private WebElement waitForElementAndClear (By by, String error_message, long timeoutInSecond){
+        WebElement element = waitForElementPresent(by,error_message,timeoutInSecond);
+        element.clear();
+        return element;
     }
 
 
