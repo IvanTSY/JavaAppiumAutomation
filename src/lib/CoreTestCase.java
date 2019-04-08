@@ -2,6 +2,7 @@ package lib;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
 import junit.framework.TestCase;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -13,7 +14,8 @@ public class CoreTestCase extends TestCase {
 
     protected AppiumDriver driver;
 
-    private static String AppiumURL = "http://127.0.0.1:4723/wd/hub" ;
+    private static String AppiumURL = "http://0.0.0.0:4723/wd/hub" ;
+    private Object AppiumDriverLocalService;
 
     @Override
 
@@ -24,14 +26,14 @@ public class CoreTestCase extends TestCase {
 
         capabilities.setCapability("platformName","Android");
         capabilities.setCapability("deviceName","AndroidTestDevice");
-        capabilities.setCapability("platformVersion","8.0");
-        capabilities.setCapability("automationName","Appium");
+        capabilities.setCapability("platformVersion","6.0");
+        capabilities.setCapability("automationName", AppiumDriverLocalService);
         capabilities.setCapability("appPackage","org.wikipedia");
         capabilities.setCapability("appActivity",".main.MainActivity");
         capabilities.setCapability("orientation","PORTRAIT");
 
-        capabilities.setCapability("app","C:\\Users\\FBI\\IdeaProjects\\ApiumTraining\\JavaAppiumAutomation\\apks\\org.wikipedia.apk"); //Дом
-        //capabilities.setCapability("app","D:\\GitHub\\JavaAppiumAutomation\\apks\\org.wikipedia.apk");  //Работа
+        //capabilities.setCapability("app","C:\\Users\\FBI\\IdeaProjects\\ApiumTraining\\JavaAppiumAutomation\\apks\\org.wikipedia.apk"); //Дом
+        capabilities.setCapability("app","D:\\GitHub\\JavaAppiumAutomation\\apks\\org.wikipedia.apk");  //Работа
 
         driver = new AndroidDriver(new URL(AppiumURL),capabilities);
 
