@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32d7f720-9f4c-4470-a650-034550484819" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_04_2019_12_46__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_04_2019_12_46__Default_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/Platform.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/ui/android/AndroidSearchPageObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/ui/ios/IosSearchPageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/CoreTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/CoreTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/ArticlePageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/ArticlePageObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/MainPageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/MainPageObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/MyListsPageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/MyListsPageObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/NavigationUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/NavigationUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/SearchPageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/SearchPageObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/WelcomePageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/WelcomePageObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/CoreTestCase.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/CoreTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/CoreTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/ui/MyListsPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/MyListsPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/ui/NavigationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/NavigationUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/IOSTestCase.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/ui/WelcomePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/WelcomePageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/iOS/GetStartedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/GetStartedTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="C:\Users\FBI\IdeaProjects\ApiumTraining\JavaAppiumAutomation\.idea\shelf/" />
@@ -30,35 +24,66 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ArticleTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/ArticleTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/SearchTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoreTestCase.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CoreTestCase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+            <state relative-caret-position="97">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Platform.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/Platform.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="423">
+              <caret line="25" column="67" lean-forward="true" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2127#2128#0" expanded="true" />
+                <element signature="e#2176#2177#0" expanded="true" />
+                <element signature="e#2342#2343#0" expanded="true" />
+                <element signature="e#2376#2377#0" expanded="true" />
+                <element signature="e#2430#2431#0" expanded="true" />
+                <element signature="e#2481#2482#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetStartedTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests/GetStartedTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidSearchPageObject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/ui/android/AndroidSearchPageObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="15" column="5" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#250#251#0" expanded="true" />
+                <element signature="e#279#280#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IosSearchPageObject.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lib/ui/ios/IosSearchPageObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="91" selection-start-line="8" selection-start-column="91" selection-end-line="8" selection-end-column="91" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#209#210#0" expanded="true" />
+                <element signature="e#238#239#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,8 +103,8 @@
       <file leaf-file-name="SearchPageObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/ui/SearchPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+            <state relative-caret-position="153">
+              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,27 +135,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticlePageObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChangeAppConditionAppTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/ChangeAppConditionAppTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -166,11 +170,15 @@
         <option value="$PROJECT_DIR$/src/FirstTest.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/NavigationUI.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/WelcomePageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/MyListsPageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/CoreTestCase.java" />
+        <option value="$PROJECT_DIR$/src/lib/Platform.java" />
+        <option value="$PROJECT_DIR$/src/tests/GetStartedTest.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/android/AndroidSearchPageObject.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/ios/IosSearchPageObject.java" />
       </list>
     </option>
   </component>
@@ -180,11 +188,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="493" />
-    <option name="y" value="13" />
-    <option name="width" value="806" />
-    <option name="height" value="673" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="131" />
+    <option name="y" value="345" />
+    <option name="width" value="1171" />
+    <option name="height" value="472" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -231,6 +239,22 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaAppiumAutomation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaAppiumAutomation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaAppiumAutomation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaAppiumAutomation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="ios" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaAppiumAutomation" type="b2602c69:ProjectViewProjectNode" />
@@ -450,23 +474,23 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
+    <frame x="131" y="345" width="1171" height="472" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32921174" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49954996" visible="true" weight="0.17014925" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.26984128" side_tool="true" visible="true" weight="0.39567232" />
-      <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.07777778" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5004501" side_tool="true" visible="true" weight="0.17014925" />
+      <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.088208824" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.73015875" visible="true" weight="0.39567232" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.73015875" weight="0.13137558" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32921174" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16111112" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.24960381" />
       <window_info id="UI Designer" order="4" />
@@ -524,20 +548,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/JavaAppiumAutomation.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FirstTest.java" />
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaAppiumAutomation.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -708,16 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/SearchPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/WelcomePageObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
@@ -744,8 +744,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+        <state relative-caret-position="97">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Platform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="25" column="67" lean-forward="true" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2127#2128#0" expanded="true" />
+            <element signature="e#2176#2177#0" expanded="true" />
+            <element signature="e#2342#2343#0" expanded="true" />
+            <element signature="e#2376#2377#0" expanded="true" />
+            <element signature="e#2430#2431#0" expanded="true" />
+            <element signature="e#2481#2482#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/GetStartedTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/SearchPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/android/AndroidSearchPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+            <element signature="e#279#280#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/ios/IosSearchPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="91" selection-start-line="8" selection-start-column="91" selection-end-line="8" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#238#239#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
