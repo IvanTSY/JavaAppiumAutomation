@@ -3,6 +3,7 @@ package lib;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
 import junit.framework.TestCase;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -17,6 +18,9 @@ public class CoreTestCase extends TestCase {
 
     private static  final String DRIVER_IOS = "iOSDriver";
     private static  final String DRIVER_ANDROID = "androidDriver";
+
+    //объект для работы капы с апиум сервером 12.1
+    //private  Object AppiumDriverLocalService;
 
     protected AppiumDriver driver;
 
@@ -65,7 +69,14 @@ public class CoreTestCase extends TestCase {
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("deviceName", "AndroidTestDevice");
             capabilities.setCapability("platformVersion", "8.0");
-            //capabilities.setCapability("automationName","Appium");
+
+            //для апиум сервера 10
+            capabilities.setCapability("automationName","Appium");
+
+            //Капа для апиум сервера 12.1
+            //capabilities.setCapability("automationName",AppiumDriverLocalService);
+
+
             capabilities.setCapability("appPackage", "org.wikipedia");
             capabilities.setCapability("appActivity", ".main.MainActivity");
             capabilities.setCapability("orientation", "PORTRAIT");
