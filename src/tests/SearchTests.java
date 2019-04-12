@@ -40,6 +40,7 @@ public class SearchTests extends CoreTestCase {
 
         SearchPageObject.initSearchInput();
         String search_line = "assdafdawfewfwefery";
+
         SearchPageObject.typeSearchLine(search_line);
         SearchPageObject.waitForEmptyResultLabel();
         SearchPageObject.assertThereIsNoResultOfSearch();

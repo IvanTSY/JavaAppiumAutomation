@@ -58,6 +58,7 @@ public class Platform {
             capabilities.setCapability("deviceName", "iPhone SE");
             capabilities.setCapability("platformVersion", "11.4");
             capabilities.setCapability("orientation", "PORTRAIT");
+            capabilities.setCapability("connectHardwareKeyboard", false);
 
             capabilities.setCapability("app", "/Users/tester/Documents/GitHub/JavaAppiumAutomation/apks/Wikipedia.app"); //Дом
             return capabilities;
