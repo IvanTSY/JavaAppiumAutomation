@@ -3,29 +3,44 @@ package lib;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
 
 public class Platform {
 
+
+    private static Platform instance;
+    private Platform (){}
+
+    public static Platform getInstance() {
+
+        if (instance==null){
+            instance = new Platform();
+        }
+
+        return instance;
+    }
+
     private static final String PLATFORM_IOS = "ios";
     private static final String PLATFORM_ANDROID = "android";
-
+    Object AppiumDriverLocalService;
     private static String AppiumURL = "http://127.0.0.1:4723/wd/hub" ;
 
     private DesiredCapabilities getAndroidDesiredCapabilities() {
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
 //объект для работы капы с апиум сервером 12.1
-// private  Object AppiumDriverLocalService;
+
+
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("deviceName", "AndroidTestDevice");
             capabilities.setCapability("platformVersion", "8.0");
 //для апиум сервера 10
-            capabilities.setCapability("automationName", "Appium");
+            //capabilities.setCapability("automationName", "Appium");
 //Капа для апиум сервера 12.1
-//capabilities.setCapability("automationName",AppiumDriverLocalService);
+            capabilities.setCapability("automationName", AppiumDriverLocalService);
             capabilities.setCapability("appPackage", "org.wikipedia");
             capabilities.setCapability("appActivity", ".main.MainActivity");
             capabilities.setCapability("orientation", "PORTRAIT");

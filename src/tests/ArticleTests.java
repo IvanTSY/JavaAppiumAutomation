@@ -5,6 +5,7 @@ import lib.ui.ArticlePageObject;
 import lib.ui.MyListsPageObject;
 import lib.ui.NavigationUI;
 import lib.ui.SearchPageObject;
+import lib.ui.factories.SearchPageObjectFatory;
 import org.junit.Test;
 
 public class ArticleTests extends CoreTestCase {
@@ -12,7 +13,7 @@ public class ArticleTests extends CoreTestCase {
 
     public void testCompareArticleTitle(){
 
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject = SearchPageObjectFatory.get(driver);
 
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Java");
@@ -32,7 +33,7 @@ public class ArticleTests extends CoreTestCase {
 
     public void testSwipeArticle(){
 
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject = SearchPageObjectFatory.get(driver);
 
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Appium");

@@ -3,6 +3,7 @@ package tests;
 import lib.CoreTestCase;
 import lib.ui.ArticlePageObject;
 import lib.ui.SearchPageObject;
+import lib.ui.factories.SearchPageObjectFatory;
 import org.junit.Test;
 
 public class ChangeAppConditionAppTests extends CoreTestCase {
@@ -12,7 +13,7 @@ public class ChangeAppConditionAppTests extends CoreTestCase {
     public void testChangeScreenOrientationOnSearchResult() {
 
 
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject = SearchPageObjectFatory.get(driver);
 
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Java");
@@ -43,7 +44,7 @@ public class ChangeAppConditionAppTests extends CoreTestCase {
 
     public void testSearchArticleInBackground(){
 
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject = SearchPageObjectFatory.get(driver);
 
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Java");
