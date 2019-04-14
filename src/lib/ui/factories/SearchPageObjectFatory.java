@@ -1,7 +1,6 @@
 package lib.ui.factories;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.ios.IOSDriver;
 import lib.Platform;
 import lib.ui.SearchPageObject;
 import lib.ui.android.AndroidSearchPageObject;
