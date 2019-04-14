@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
+import lib.Platform;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -106,24 +107,47 @@ public class MainPageObject {
         }
     }
 
-    public  void swipeElementToLeft(String locator, String error_message){
-        WebElement element = waitForElementPresent(
+
+    public void clickElementToTheRightUpperCorner(String locator, String error_message)  //клик по кнопке удалить статью для ios
+    {
+        WebElement element = this.waitForElementPresent(locator + "/..", error_message); // "/.." переходим на элемент выше
+        int right_x = element.getLocation().getX();  // вычисляем правую точку
+        int upper_y = element.getLocation().getY(); // вычисляем вверх
+        int lower_y = upper_y + element.getSize().getHeight(); // вычисляем низ
+        int middle_y = (upper_y + lower_y) / 2; // вычисляем середину
+        int width = element.getSize().getWidth(); // узнаем ширину элемента
+
+        int point_to_click_x = (right_x + width) - 3; // находим правый верзний угол
+        int point_to_click_y = middle_y;
+
+        TouchAction action = new TouchAction(driver);
+        action.tap(PointOption.point(point_to_click_x, point_to_click_y)).perform();
+    }
+
+    public void swipeElementToLeft(String locator, String error_message) // скрол элемента влево по оси Х
+    {
+        WebElement element = waitForElementPresent( // находим элемент на странице
                 locator,
                 error_message,
                 10);
         int left_x = element.getLocation().getX();
         int right_x = left_x + element.getSize().getWidth();
-        int upper_y = element.getLocation().getY();
+        int upper_y = element.getLocation().getY(); //
         int lower_y = upper_y + element.getSize().getHeight();
-        int middle_y = (upper_y + lower_y)/2;
+        int middle_y = (upper_y + lower_y) / 2;
 
         TouchAction action = new TouchAction(driver);
-        action
-                .press(PointOption.point(right_x,middle_y))
-                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)))
-                .moveTo(PointOption.point(left_x,middle_y))
-                .release()
-                .perform();
+        action.press(PointOption.point(right_x,middle_y));
+        action.waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)));
+
+        if (Platform.getInstance().isAndroid()){
+            action.moveTo(PointOption.point(left_x,middle_y));
+        } else {
+            int offset_x = ( -1 * element.getSize().getWidth());
+            action.moveTo(PointOption.point(offset_x, 0));
+        }
+        action.release();
+        action.perform();
     }
 
     public boolean isElementLocatedOnTheScreen(String locator)

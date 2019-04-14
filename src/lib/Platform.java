@@ -59,6 +59,7 @@ public class Platform {
             capabilities.setCapability("platformVersion", "11.4");
             capabilities.setCapability("orientation", "PORTRAIT");
             capabilities.setCapability("connectHardwareKeyboard", false);
+            capabilities.setCapability("autoDismissAlerts","true");
 
             capabilities.setCapability("app", "/Users/tester/Documents/GitHub/JavaAppiumAutomation/apks/Wikipedia.app"); //Дом
             return capabilities;

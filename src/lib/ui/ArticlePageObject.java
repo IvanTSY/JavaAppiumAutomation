@@ -98,6 +98,19 @@ abstract public class ArticlePageObject extends MainPageObject {
                 5
         );
     }
+    public void addArticlesToMySaved() // добавление статьи в IOS
+    {
+        this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST_BUTTON, "Cannot find option to add article to reading list", 5);
+    }
+
+    public void waitArticleTitlePresent() // ждем появление элемента
+    {
+        this.waitForElementPresent(
+                TITLE,
+                "Cannot find article title",
+                5
+        );
+    }
 
 
 }
