@@ -110,14 +110,32 @@ public class MainPageObject {
 
     public void clickElementToTheRightUpperCorner(String locator, String error_message)  //клик по кнопке удалить статью для ios
     {
-        WebElement element = this.waitForElementPresent(locator , error_message); // "/.." переходим на элемент выше
+
+        WebElement element = this.waitForElementPresent(locator + "/..", error_message); // "/.." переходим на элемент выше
         int right_x = element.getLocation().getX();  // вычисляем правую точку
         int upper_y = element.getLocation().getY(); // вычисляем вверх
         int lower_y = upper_y + element.getSize().getHeight(); // вычисляем низ
         int middle_y = (upper_y + lower_y) / 2; // вычисляем середину
         int width = element.getSize().getWidth(); // узнаем ширину элемента
 
-        int point_to_click_x = (right_x + width) - 3; // находим правый верзний угол
+        int point_to_click_x = (right_x + width) - 3; // находим правый верзний угол -3 убрал
+        int point_to_click_y = middle_y;
+
+        TouchAction action = new TouchAction(driver);
+        action.tap(PointOption.point(point_to_click_x, point_to_click_y)).perform();
+    }
+
+    public void clickElementToTheRightUpperCornerForWEBFORM(String locator, String error_message)  //клик по кнопке удалить статью для ios
+    {
+        //TODO Ищем правый верхний угол для веб формы
+        WebElement element = this.waitForElementPresent(locator, error_message); // "/.." переходим на элемент выше
+        int right_x = element.getLocation().getX();  // вычисляем правую точку
+        int upper_y = element.getLocation().getY(); // вычисляем вверх
+        int lower_y = upper_y + element.getSize().getHeight(); // вычисляем низ
+        int middle_y = (upper_y + lower_y) / 2; // вычисляем середину
+        int width = element.getSize().getWidth(); // узнаем ширину элемента
+
+        int point_to_click_x = (right_x + width); // находим правый верзний угол -3 убрал
         int point_to_click_y = middle_y;
 
         TouchAction action = new TouchAction(driver);

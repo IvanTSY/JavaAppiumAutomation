@@ -33,7 +33,7 @@ abstract public class ArticlePageObject extends MainPageObject {
         if(Platform.getInstance().isAndroid()){
             return title_element.getAttribute("text");
         }else{
-            return title_element.getAttribute("name");
+            return title_element.getAttribute("value");
         }
 
     }

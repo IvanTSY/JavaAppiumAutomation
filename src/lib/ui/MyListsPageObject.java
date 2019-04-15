@@ -9,18 +9,19 @@ abstract public class MyListsPageObject extends MainPageObject {
     protected static String
         FOLDER_BY_NAME_TPL ,
         ARTICLE_BY_TITLE_TPL,
-            WEBFORM;
+            WEB_FORM;
 
-    private static String getFolderXpathByName(String name_of_folder){
-        return FOLDER_BY_NAME_TPL.replace("{FOLDER_NAME}",name_of_folder);
+    private static String getFolderXpathByName(String name_of_folder) // заменяет значение константы FOLDER_BY_NAME_TPL на значение из name_of_folder
+    {
+        return FOLDER_BY_NAME_TPL.replace("{FOLDER_NAME}", name_of_folder);
     }
 
     private static String getSavedArticleXpathByTitle(String article_title){
         return ARTICLE_BY_TITLE_TPL.replace("{TITLE}", article_title);
     }
-
-    private static String getWebFormToClose(String name_of_webform){
-        return WEBFORM.replace("{WEB}",name_of_webform);
+//TODO тут передаем имя в икспас убрал ВЕБФОРМ СТРИНГ
+    private static String getWebFormToClose(String WEBFORM){
+        return MyListsPageObject.WEB_FORM;
     }
 
     public MyListsPageObject(AppiumDriver driver) {
@@ -66,10 +67,10 @@ abstract public class MyListsPageObject extends MainPageObject {
         this.waitForArticleToDisappearByTitle(article_title); //  убеждаемся что статья удалилась
     }
 
-    public void closeIOSUnknownForm(String name_of_webform){
-        String webviev = getWebFormToClose(name_of_webform);
-
-        this.clickElementToTheRightUpperCorner(
+    public void closeIOSUnknownForm(){
+        String webviev = getWebFormToClose(WEB_FORM);
+        this.waitForElementPresent(WEB_FORM,"not see web v iew",5);
+        this.clickElementToTheRightUpperCornerForWEBFORM(
                 webviev,"Not find web element");
     }
 
