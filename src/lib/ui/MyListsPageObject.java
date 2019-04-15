@@ -8,7 +8,8 @@ abstract public class MyListsPageObject extends MainPageObject {
 
     protected static String
         FOLDER_BY_NAME_TPL ,
-        ARTICLE_BY_TITLE_TPL;
+        ARTICLE_BY_TITLE_TPL,
+            WEBFORM;
 
     private static String getFolderXpathByName(String name_of_folder){
         return FOLDER_BY_NAME_TPL.replace("{FOLDER_NAME}",name_of_folder);
@@ -18,9 +19,15 @@ abstract public class MyListsPageObject extends MainPageObject {
         return ARTICLE_BY_TITLE_TPL.replace("{TITLE}", article_title);
     }
 
+    private static String getWebFormToClose(String name_of_webform){
+        return WEBFORM.replace("{WEB}",name_of_webform);
+    }
+
     public MyListsPageObject(AppiumDriver driver) {
         super(driver);
     }
+
+
 
     public void openFolderByName(String name_of_folder){
 
@@ -58,6 +65,14 @@ abstract public class MyListsPageObject extends MainPageObject {
 
         this.waitForArticleToDisappearByTitle(article_title); //  убеждаемся что статья удалилась
     }
+
+    public void closeIOSUnknownForm(String name_of_webform){
+        String webviev = getWebFormToClose(name_of_webform);
+
+        this.clickElementToTheRightUpperCorner(
+                webviev,"Not find web element");
+    }
+
 
 }
 

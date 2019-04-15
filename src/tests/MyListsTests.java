@@ -2,15 +2,13 @@ package tests;
 
 import lib.CoreTestCase;
 import lib.Platform;
-import lib.ui.ArticlePageObject;
-import lib.ui.MyListsPageObject;
-import lib.ui.NavigationUI;
-import lib.ui.SearchPageObject;
+import lib.ui.*;
 import lib.ui.factories.ArticlePageObjectFactory;
 import lib.ui.factories.MyListsPageObjectFactory;
 import lib.ui.factories.NavigationUIFactory;
 import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
+import sun.applet.Main;
 
 public class MyListsTests extends CoreTestCase {
     private static final String name_of_folder = "Learning programming";
@@ -34,15 +32,17 @@ public class MyListsTests extends CoreTestCase {
         } else {
             ArticlePageObject.addArticlesToMySaved();  // сохранение статьи для ios
         }
-
+        MyListsPageObject MyListsPageObject = MyListsPageObjectFactory.get(driver);
+        MyListsPageObject.closeIOSUnknownForm("Wikipedia");
+                //написать метод для клика в правый верхний угол
         ArticlePageObject.closeArticle();  // находим элемент "Navigate up" и кликаем по нему ЗАКРЫВАЕМ
 
         NavigationUI NavigationUI = NavigationUIFactory.get(driver);
         NavigationUI.clickMyList();  // находим элемент "My lists" и кликаем по нему
 
-        ArticlePageObject.waitArticleTitlePresent(); // ждем появление элемента
+//        ArticlePageObject.waitArticleTitlePresent(); // ждем появление элемента
 
-        MyListsPageObject MyListsPageObject = MyListsPageObjectFactory.get(driver);
+
 
         if (Platform.getInstance().isAndroid()){
             MyListsPageObject.openFolderByName(name_of_folder); // находим папку с названием "Learning programming" и кликаем по нему

@@ -110,7 +110,7 @@ public class MainPageObject {
 
     public void clickElementToTheRightUpperCorner(String locator, String error_message)  //клик по кнопке удалить статью для ios
     {
-        WebElement element = this.waitForElementPresent(locator + "/..", error_message); // "/.." переходим на элемент выше
+        WebElement element = this.waitForElementPresent(locator , error_message); // "/.." переходим на элемент выше
         int right_x = element.getLocation().getX();  // вычисляем правую точку
         int upper_y = element.getLocation().getY(); // вычисляем вверх
         int lower_y = upper_y + element.getSize().getHeight(); // вычисляем низ
@@ -196,16 +196,20 @@ public class MainPageObject {
 
     //метод для авто определения типов локатора
 
-    private By getLocatorByString(String locator_with_type){
-        String[] exploded_locator = locator_with_type.split(Pattern.quote(":"),2);
+    private By getLocatorByString(String locator_with_type) // метод для определения типов локатора
+    {
+        String[] exploded_locator = locator_with_type.split(Pattern.quote(":"), 2);
         String by_type = exploded_locator[0];
         String locator = exploded_locator[1];
-        if(by_type.equals("xpath")){
+
+        if (by_type.equals("xpath"))
+        {
             return By.xpath(locator);
-        }else if(by_type.equals("id")){
+        } else if (by_type.equals("id"))
+        {
             return By.id(locator);
-        }else {
-                throw new IllegalArgumentException("Cannot get type of locator. Locator:"+locator_with_type);
+        } else {
+            throw new IllegalArgumentException("Cannot get type of locator. Locator:" + locator_with_type);
         }
     }
 

@@ -26,6 +26,8 @@ abstract public class ArticlePageObject extends MainPageObject {
         return waitForElementPresent(TITLE,"Cannot find article title on page",15);
     }
 
+
+
     public String getArticleTitle(){
         WebElement title_element = waitForTitleElement();
         if(Platform.getInstance().isAndroid()){
@@ -103,14 +105,7 @@ abstract public class ArticlePageObject extends MainPageObject {
         this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST_BUTTON, "Cannot find option to add article to reading list", 5);
     }
 
-    public void waitArticleTitlePresent() // ждем появление элемента
-    {
-        this.waitForElementPresent(
-                TITLE,
-                "Cannot find article title",
-                5
-        );
-    }
+
 
 
 }

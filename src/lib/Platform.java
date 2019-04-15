@@ -58,18 +58,16 @@ public class Platform {
             capabilities.setCapability("deviceName", "iPhone SE");
             capabilities.setCapability("platformVersion", "11.4");
             capabilities.setCapability("orientation", "PORTRAIT");
-            capabilities.setCapability("connectHardwareKeyboard", false);
-            capabilities.setCapability("autoDismissAlerts","true");
-
+            capabilities.setCapability("fullReset",true);
             capabilities.setCapability("app", "/Users/tester/Documents/GitHub/JavaAppiumAutomation/apks/Wikipedia.app"); //Дом
             return capabilities;
         }
     private String getPlatformVar(){
     return System.getenv("PLATFORM");
     }
-    private boolean isPlatform(String my_pltform){
+    private boolean isPlatform(String my_platform){
     String platform = this.getPlatformVar();
-    return my_pltform.equals(platform);
+    return my_platform.equals(platform);
     }
 
     public boolean isAndroid(){

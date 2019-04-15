@@ -8,7 +8,7 @@ public class IosArticlePageObject extends ArticlePageObject {
         TITLE = "id:Java (programming language)"; //ищет конкретную статью , проверить сможет ли найти тайтл целиком
         FOOTER_ELEMENT = "id:View article in browser";
         OPTIONS_ADD_TO_MY_LIST_BUTTON = "id:Save for later";
-        CLOSE_ARTICLE_BUTTON = "id:Back";
+        CLOSE_ARTICLE_BUTTON = "xpath://XCUIElementTypeButton[@name='Back']"; //или id:Back
     }
 
     public IosArticlePageObject(AppiumDriver driver){
