@@ -2,26 +2,28 @@ package tests;
 
 import lib.CoreTestCase;
 import lib.Platform;
-import lib.ui.*;
+import lib.ui.ArticlePageObject;
+import lib.ui.MyListPageObject;
+import lib.ui.NavigationUI;
+import lib.ui.SearchPageObject;
 import lib.ui.factories.ArticlePageObjectFactory;
-import lib.ui.factories.MyListsPageObjectFactory;
+import lib.ui.factories.MyListPageObjectFactory;
 import lib.ui.factories.NavigationUIFactory;
 import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
-import sun.applet.Main;
 
-public class MyListsTests extends CoreTestCase {
-
+public class MyListsTests extends CoreTestCase
+{
+    private static final String name_of_folder = "Learning programming"; // описываем переменную один раз,что бы везде сама подставлялась
 
     @Test
     public void testSaveFirstArticleToMyList()
     {
-        String name_of_folder = "Learning programming";
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
 
         SearchPageObject.initSearchInput();  //открытие поиска википедии
         SearchPageObject.typeSearchLine("Java"); //ввод текста в строку поиска
-        SearchPageObject.clicByArticleWithSubstring("Object-oriented programming language");  //клик по статье найденной по ресурс ид и тексту
+        SearchPageObject.clickByArticleWithSubString("Object-oriented programming language");  //клик по статье найденной по ресурс ид и тексту
 
         ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
         ArticlePageObject.waitForTitleElement();   // выбираем элемент из списка поиска по заголовку
@@ -33,20 +35,26 @@ public class MyListsTests extends CoreTestCase {
         } else {
             ArticlePageObject.addArticlesToMySaved();  // сохранение статьи для ios
         }
-        MyListsPageObject MyListsPageObject = MyListsPageObjectFactory.get(driver);
-        MyListsPageObject.closeIOSUnknownForm();
-                //написать метод для клика в правый верхний угол
+
         ArticlePageObject.closeArticle();  // находим элемент "Navigate up" и кликаем по нему ЗАКРЫВАЕМ
 
-        NavigationUI NavigationUI = NavigationUIFactory.get(driver);
-        NavigationUI.clickMyList();  // находим элемент "My lists" и кликаем по нему
+        MyListPageObject MyListPageObject = MyListPageObjectFactory.get(driver);
 
-//        ArticlePageObject.waitArticleTitlePresent(); // ждем появление элемента
-        MyListsPageObject MyLists = MyListsPageObjectFactory.get(driver);
         if (Platform.getInstance().isAndroid()){
-            MyListsPageObject.openFolderByName(name_of_folder); // находим папку с названием "Learning programming" и кликаем по нему
+            MyListPageObject.closeIOSUnknownForm();
         }
-        MyLists.swipeByArticleToDelete(article_title);   // скролим элемент влево и сразу же идет проверка
-    }
 
+
+        NavigationUI NavigationUI = NavigationUIFactory.get(driver);
+        NavigationUI.clickMyLists();  // находим элемент "My lists" и кликаем по нему
+
+        ArticlePageObject.waitArticleTitlePresent(); // ждем появление элемента
+
+
+
+        if (Platform.getInstance().isAndroid()){
+            MyListPageObject.openFolderByName(name_of_folder); // находим папку с названием "Learning programming" и кликаем по нему
+        }
+        MyListPageObject.swipeByArticleToDelete(article_title);   // скролим элемент влево и сразуже идет проверка
+    }
 }

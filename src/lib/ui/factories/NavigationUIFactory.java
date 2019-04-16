@@ -4,7 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import lib.Platform;
 import lib.ui.NavigationUI;
 import lib.ui.android.AndroidNavigationUI;
-import lib.ui.ios.IosNavigationUI;
+import lib.ui.ios.iOSNavigationUI;
 
 public class NavigationUIFactory
 {
@@ -13,7 +13,7 @@ public class NavigationUIFactory
         if (Platform.getInstance().isAndroid()){
             return new AndroidNavigationUI(driver);
         } else {
-            return new IosNavigationUI(driver);
+            return new iOSNavigationUI(driver);
         }
     }
 }

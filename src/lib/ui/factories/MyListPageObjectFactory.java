@@ -2,18 +2,18 @@ package lib.ui.factories;
 
 import io.appium.java_client.AppiumDriver;
 import lib.Platform;
-import lib.ui.MyListsPageObject;
+import lib.ui.MyListPageObject;
 import lib.ui.android.AndroidMyListsPageObject;
-import lib.ui.ios.IosMyListsPageObject;
+import lib.ui.ios.iOSMyListsPageObject;
 
-public class MyListsPageObjectFactory
+public class MyListPageObjectFactory
 {
-    public static MyListsPageObject get(AppiumDriver driver)
+    public static MyListPageObject get(AppiumDriver driver)
     {
         if(Platform.getInstance().isAndroid()){
             return new AndroidMyListsPageObject(driver);
         } else {
-            return new IosMyListsPageObject(driver);
+            return new iOSMyListsPageObject(driver);
         }
     }
 }

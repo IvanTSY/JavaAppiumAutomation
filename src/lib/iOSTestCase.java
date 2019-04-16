@@ -1,25 +1,33 @@
 package lib;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.ios.IOSDriver;
 import junit.framework.TestCase;
-import lib.ui.WelcomPageObject;
 import org.openqa.selenium.ScreenOrientation;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.net.URL;
 import java.time.Duration;
 
-public class CoreTestCase extends TestCase {
+public class iOSTestCase extends TestCase {
 
     protected AppiumDriver driver;
+    private static String AppiumURL = "http://127.0.0.1:4723/wd/hub";
 
     @Override
     protected void setUp() throws Exception
     {
         super.setUp();
 
-        driver = Platform.getInstance().getDriver();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
 
+        capabilities.setCapability("platformName","iOS");
+        capabilities.setCapability("deviceName","iPhone 8 Plus");
+        capabilities.setCapability("platformVersion","11.0");
+        capabilities.setCapability("app","/Users/testers/Desktop/JavaAppiumAutomation/apks/wikipedia.app");
+
+        driver = new IOSDriver(new URL(AppiumURL), capabilities);
         this.rotateScreenPortrait(); // девайс всегда будет переходить в портретный режим перед запуском теста
-        this.skipeWelcomePageForIOSApp(); // клик по кнопке skip
     }
 
     @Override
@@ -44,14 +52,6 @@ public class CoreTestCase extends TestCase {
     protected void backGroundApp(int seconds)
     {
         driver.runAppInBackground(Duration.ofMillis(seconds)); // отсылаем приложение в бекграунд, автоматически разворачивается
-    }
-
-    private void skipeWelcomePageForIOSApp()
-    {
-        if(Platform.getInstance().isIOS()) {
-            WelcomPageObject WelcomPageObject = new WelcomPageObject(driver);
-            WelcomPageObject.clickSkip();
-        }
     }
 
 }

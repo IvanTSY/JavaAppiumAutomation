@@ -1,18 +1,14 @@
-package tests;
+package tests.iOS;
 
-import lib.CoreTestCase;
-import lib.Platform;
+import lib.iOSTestCase;
 import lib.ui.WelcomPageObject;
 import org.junit.Test;
 
-public class GetStartedTest extends CoreTestCase
+public class GetStartedTest extends iOSTestCase
 {
     @Test
     public void testPassThroughWelcome()
     {
-        if (Platform.getInstance().isAndroid()) { // если Android тест завершается, если ios то пропускаем стартовые страницы wikipedia
-            return;
-        }
         WelcomPageObject WelcomePage = new WelcomPageObject(driver);
 
         WelcomePage.waitForLearnMoreLink();

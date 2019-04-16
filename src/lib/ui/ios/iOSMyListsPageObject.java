@@ -1,17 +1,16 @@
 package lib.ui.ios;
 
 import io.appium.java_client.AppiumDriver;
-import lib.ui.MyListsPageObject;
+import lib.ui.MyListPageObject;
 
-public class IosMyListsPageObject extends MyListsPageObject
+public class iOSMyListsPageObject extends MyListPageObject
 {
     static {
         WEB_FORM = "xpath://XCUIElementTypeApplication[@name='Wikipedia']";// продолжение /XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]
         ARTICLE_BY_TITLE_TPL = "xpath://XCUIElementTypeLink[contains(@name='{TITLE}')]";
-
     }
 
-    public IosMyListsPageObject(AppiumDriver driver)
+    public iOSMyListsPageObject(AppiumDriver driver)
     {
         super(driver);
     }
